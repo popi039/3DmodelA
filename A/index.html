@@ -6,21 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>show3DmodelPage</title>
     <script type="importmap">
-                    {
-                        "imports": {
-					"three": "https://unpkg.com/three/build/three.module.js",
-					"three/addons/": "https://unpkg.com/three/examples/jsm/"
-                        }
-                    }
-
-
-        </script>
-  	 <script type="module" src="main.js"></script>
-
+        {
+            "imports": {
+                "three": "https://unpkg.com/three/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="main.js"></script>
 </head>
 
 <body>
-     <!-- // 3D���f����\��������canvas�v�f���쐬 -->
+    <!-- 3Dモデル表示用のcanvas -->
     <canvas id="canvas"></canvas> 
+
+    <!-- 音声認識制御用のボタン -->
+    <button id="startButton">Start Recognition</button>
+    <button id="stopButton">Stop Recognition</button>
 </body>
+
 </html>
+
