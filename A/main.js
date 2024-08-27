@@ -107,7 +107,7 @@ recognition.onresult = (event) => {
 
     const now = Date.now();
     if (now - lastTriggerTime > triggerDelay) { // 遅延時間を超えている場合にのみトリガー
-        if (transcript.includes('信じられない') || transcript.includes('心臓が止まりそう') || transcript.includes('どうしよう') || transcript.includes('実感がわかない')  || transcript.includes('嬉しい')) {
+        if (transcript.includes('信じられない') || transcript.includes('心臓が止まりそう') || transcript.includes('どうしよう') || transcript.includes('実感がわかない') || transcript.includes('嬉しい')) {
             if (!isAnimationTriggered) {
                 triggerNodAnimation();
                 lastTriggerTime = now; // 最後にトリガーした時間を更新
@@ -133,23 +133,6 @@ recognition.onend = () => {
     console.log('音声認識が終了しました。');
     isRecognizing = false; // 音声認識が終了したことを追跡
 };
-
-// エンターキーを押している間に音声認識の開始、離すと停止
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' && !isRecognizing) {
-        recognition.start();
-        console.log('音声認識を開始します...');
-        isRecognizing = true;
-    }
-});
-
-document.addEventListener('keyup', (event) => {
-    if (event.key === 'Enter' && isRecognizing) {
-        recognition.stop();
-        console.log('音声認識を停止しました。');
-        isRecognizing = false;
-    }
-});
 
 // ボタンでの音声認識制御
 const startButton = document.getElementById('startButton');
